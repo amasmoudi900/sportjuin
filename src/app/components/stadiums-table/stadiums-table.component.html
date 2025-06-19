@@ -1,0 +1,33 @@
+
+  <div class="widget-next-match">
+      <table class="table custom-table">
+        <thead>
+          <tr>
+            <th *ngIf="isDisplayed">ID</th>
+            <th>Name</th>
+            <th>capacity</th>
+            <th>country</th>
+        
+            <th *ngIf="isDisplayed">Actions</th>
+           
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let stadium of stadiums">
+            <td *ngIf="isDisplayed">{{stadium._id}}</td>
+            <td>{{stadium.name}}<strong class="text-white"></strong></td>
+            <td>{{stadium.capacity}}</td>
+            <td>{{stadium.country}} </td>
+         
+            <td *ngIf="isDisplayed">
+              <button class="btn btn-info">Display</button>
+              <button class="btn btn-warning">Edit</button>
+              <button class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+       
+        
+        </tbody>
+      </table>
+    </div>
+  

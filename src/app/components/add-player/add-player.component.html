@@ -1,0 +1,52 @@
+
+
+<div class="hero overlay"
+  style="background-image: url('assets/images/bg_3.jpg');">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-9 mx-auto text-center">
+        <h1 class="text-white">Add Player</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="site-section">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-12">
+        <form #playerForm="ngForm" (ngSubmit)="addPlayer()">
+
+          <div class="form-group">
+            <input type="text" [(ngModel)]="player.name" name="name"
+              class="form-control" placeholder="Name">
+          </div>
+          <div class="form-group">
+            <input type="number" [(ngModel)]="player.age" name="age"
+              class="form-control" placeholder="Age">
+          </div>
+          <div class="form-group">
+            <input type="number" [(ngModel)]="player.number" name="number"
+              class="form-control" placeholder="Number">
+          </div>
+          <div class="form-group">
+            <input type="text" class="form-control"
+              [(ngModel)]="player.position" name="position"
+              placeholder="Position">
+          </div>
+          <div class="form-group">
+            <select class="form-control" name="team" id="teamId" [(ngModel)]="player.teamId">
+              <option value="" disabled selected >Select Team</option>
+              <option [value]="t._id" *ngFor="let t of teams" style="color: black;">{{t.name}}</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <input type="submit" class="btn btn-primary py-3 px-5" value="Add">
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</div>
