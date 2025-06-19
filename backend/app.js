@@ -423,13 +423,13 @@ app.post("/weather", (req, res) => {
     axios.get(apiURL).then(
         (apiResponse) => {
             console.log("Here API response", apiResponse.data);
-            let response = {
+            let myResponse = {
                 temp: apiResponse.data.main.temp,
                 humidity: apiResponse.data.main.humidity,
                 speed: apiResponse.data.wind.speed,
                 country: apiResponse.data.sys.country
             };
-            res.json({ weatherResponse: response })
+            res.json({ weatherResponse: myResponse })
         }
     )
 });
